@@ -20,7 +20,7 @@ USAGE EXAMPLE -
 Taking the example host check line from the Nagios logs:
 
                   [1618182000] CURRENT HOST STATE: gateway;UP;HARD;1;PING OK - Packet loss = 0%, R
-TA = 0.70 ms
+                  TA = 0.70 ms
 
 This line would be translated to:
 
