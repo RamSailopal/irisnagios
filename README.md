@@ -67,6 +67,11 @@ A command line utility is also available to parse the Nagios logs from the globa
             Fifth Parameter (Optional) - The date to search logs from in the format (YYYY MM DD HH MM SS) - Pass 0 to search from the start of the logs 
             Sixth Parameter (Optional) - The date to search logs to in the format (YYYY MM DD HH MM SS) - Leave empty to search to the end of the logs.
 
+
+   USAGE EXAMPLE: - nagiosread "IRIS" "USER" "server1" "ALL" "2016 02 02 00 00 00" "2016 02 02 00 00 00"
+           
+The above example will search all services for host server1 occurring at the exact date and time of 2nd February 2016 at 00:00    
+
 INSTALLATION:
 
     git clone https://github.com/RamSailopal/irisnagios.git
