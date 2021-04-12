@@ -10,6 +10,7 @@ PREREQUISITES -
                   iriscmd - Attained from https://github.com/RamSailopal/iriscmd
 
 PARAMETERS -
+
                   IRIS instance name - First parameter
                   IRIS namespace - Second Parameter
                   full - (optional) - Third Parameter - Whether to parse the archive files
@@ -68,7 +69,9 @@ A command line utility is also available to parse the Nagios logs from the globa
             Sixth Parameter (Optional) - The date to search logs to in the format (YYYY MM DD HH MM SS) - Leave empty to search to the end of the logs.
 
 
-   USAGE EXAMPLE: - nagiosread "IRIS" "USER" "server1" "ALL" "2016 02 02 00 00 00" "2016 02 02 00 00 00"
+   USAGE EXAMPLE: - 
+
+            nagiosread "IRIS" "USER" "server1" "ALL" "2016 02 02 00 00 00" "2016 02 02 00 00 00"
            
 The above example will search all services for host server1 occurring at the exact date and time of 2nd February 2016 at 00:00    
 
