@@ -16,7 +16,17 @@ PARAMETERS -
 
 USAGE EXAMPLE - 
                   
-                  irisnagios "IRIS" "USER" 
+  To run for the first time, run:
+                  
+                  irisnagios "IRIS" "USER" "full"
+
+This will process all log files in /var/log/nagios/archives
+
+After the import of the archives, remove the full third parameter in order to process the "live" /var/log/nagios/nagios.log file only, and so:
+
+                  irisnagios "IRIS" "USER"
+
+This execution can then be set up of a periodic cron job
 
 Taking the example host check line from the Nagios logs:
 
