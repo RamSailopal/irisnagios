@@ -15,6 +15,7 @@ PARAMETERS -
                   full - (optional) - Third Parameter - Whether to parse the archive files
 
 USAGE EXAMPLE - 
+                  
                   irisnagios "IRIS" "USER" 
 
 Taking the example host check line from the Nagios logs:
