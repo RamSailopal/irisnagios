@@ -20,7 +20,8 @@ for lne in f:
    proc=0
    if "CURRENT SERVICE STATE" in lne:
       proc=1 
-      bits=lne.split(";")
+      lne1=lne.replace("\n","")
+      bits=lne1.split(";")
       bits1=bits[0].split(" ")
       strdat=bits1[0].replace("[","")
       strdat=strdat.replace("]","")
@@ -30,7 +31,8 @@ for lne in f:
       objscr.append("iriscmd '" + sys.argv[1] + "' '" + sys.argv[2] + "' 'S ^NAGIOS(\"" + bits1[4] + "\",\"" + bits[1] + "\",\"" + strdat + "\",\"Info\")=\"" + bits[5] + "\"'")
    elif "CURRENT HOST STATE" in lne:
       proc=1
-      bits=lne.split(";")
+      lne1=lne.replace("\n","")
+      bits=lne1.split(";")
       bits1=bits[0].split(" ")
       strdat=bits1[0].replace("[","")
       strdat=strdat.replace("]","")
@@ -41,7 +43,6 @@ for lne in f:
 
    if (proc==1):
       for cmd in objscr:
-         print(cmd)
          #
          # Now run the objectscript with iriscmd
          #
@@ -87,7 +88,6 @@ if (len(sys.argv) == 4):
 
                  if (proc==1):
                     for cmd in objscr:
-                       print(cmd)
                        #
                        # Now run the objectscript with iriscmd
                        #
