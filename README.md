@@ -50,11 +50,25 @@ Taking the example service check line:
 This line would be translated to:
 
                    ^NAGIOS("server1","1618182000","CPU Temp","date")="Mon 12 Apr 2021 00:00:00 BST"
-                   ^NAGIOS("gateway","1618182000","hostchk","State")="OK"
-                   ^NAGIOS("gateway","1618182000","hostchk","Check")="HARD"
-                   ^NAGIOS("gateway","1618182000","hostchk","Info")="sensor ok"
+                   ^NAGIOS("server1","1618182000","hostchk","State")="OK"
+                   ^NAGIOS("server1","1618182000","hostchk","Check")="HARD"
+                   ^NAGIOS("server1","1618182000","hostchk","Info")="sensor ok"
+
+NAGIOSREAD:
+
+A command line utility is also available to parse the Nagios logs from the global.
+
+   PARAMETERS: - 
+              
+            First Parameter - IRIS instance name
+            Second Parameter - IRIS namespace
+            Third Parameter - The host to search Nagios logs for (pass ALL for all hosts)
+            Fourth Parameter - The service to search Nagios logs for (pass ALL for all services) - Pass hostchks to search on host checks and not service checks.
+            Fifth Parameter (Optional) - The date to search logs from in the format (YYYY MM DD HH MM SS) - Pass 0 to search from the start of the logs 
+            Sixth Parameter (Optional) - The date to search logs to in the format (YYYY MM DD HH MM SS) - Leave empty to search to the end of the logs.
 
 INSTALLATION:
 
     git clone https://github.com/RamSailopal/irisnagios.git
-    mv irisnagios/irisnagios /usr/local/bin/
+    cd irisnagios/irisnagios
+    ./install.sh
