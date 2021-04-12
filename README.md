@@ -78,5 +78,5 @@ The above example will search all services for host server1 occurring at the exa
 INSTALLATION:
 
     git clone https://github.com/RamSailopal/irisnagios.git
-    cd irisnagios/irisnagios
+    cd irisnagios
     ./install.sh
