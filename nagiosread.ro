@@ -1,0 +1,28 @@
+Cache for UNIX^INT^WNS^^~Format=Cache.S~^RAW
+%RO on 12 Apr 2021 01:49:56PM
+Nagiosread^INT^1^65846,49753.765051^0
+Read(host,srv,dayte,dayte1)
+	S hst=$O(^NAGIOS(""))
+	While hst'="" {
+		S serv=$O(^NAGIOS(hst,""))
+		While serv '= "" {
+			S dat=$O(^NAGIOS(hst,serv,""))
+			While dat '= "" {
+				If (host="ALL" || (hst=host)) && (srv="ALL" || (srv=serv)) && (dat>=dayte && (dat<=dayte1)) {
+		           W !,"Host - "_hst
+		           W !,"Service - "_serv
+		           W !,"Date - "_^NAGIOS(hst,serv,dat,"date")
+		           W !,"Status - "_^NAGIOS(hst,serv,dat,"Status")
+		           W !,"Check - "_^NAGIOS(hst,serv,dat,"Check")
+		           W !,"Info - "_$G(^NAGIOS(hst,serv,dat,"Info"))
+				}	
+			S dat=$O(^NAGIOS(hst,serv,dat))
+			}
+		S serv=$O(^NAGIOS(hst,serv))
+		}
+	S hst=$O(^NAGIOS(hst))
+	}
+	Quit
+
+
+
